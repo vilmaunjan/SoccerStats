@@ -4,8 +4,8 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import com.example.soccerstats.CompetitionRepository;
-import com.example.soccerstats.model.Competition;
+import com.example.soccerstats.repositories.CompetitionRepository;
+import com.example.soccerstats.model.competition.Competition;
 import java.util.List;
 
 public class CompetitionViewModel extends AndroidViewModel {
@@ -19,11 +19,16 @@ public class CompetitionViewModel extends AndroidViewModel {
     mAllCompetitions = mRepository.getAllCompetitions();
   }
 
-  LiveData<List<Competition>> getmAllCompetitions() {
+  public LiveData<List<Competition>> getAllCompetitions() {
     return mAllCompetitions;
   }
 
-  public void insert(Competition competition) {
-    mRepository.insert(competition);
+  public void insert() {
+    mRepository.insert();
   }
+
+  public void insertMatch(String competition) {
+    mRepository.insertMatch(competition);
+  }
+
 }

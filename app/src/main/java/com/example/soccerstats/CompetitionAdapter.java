@@ -4,9 +4,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.soccerstats.model.Competition;
+import com.example.soccerstats.model.competition.Competition;
 import java.util.List;
 
 public class CompetitionAdapter extends RecyclerView.Adapter<CompetitionAdapter.CompetitionViewHolder> {
@@ -26,14 +27,14 @@ public class CompetitionAdapter extends RecyclerView.Adapter<CompetitionAdapter.
   public void onBindViewHolder(CompetitionViewHolder holder, int position) {
     if (mCompetitions != null) {
       Competition current = mCompetitions.get(position);
-      holder.wordItemView.setText(current.getId());
+      holder.nameTv.setText(current.getName());
     } else {
       // Covers the case of data not being ready yet.
-      holder.wordItemView.setText("No Word");
+      holder.nameTv.setText("No Word");
     }
   }
 
-  void setId(List<Competition> competitions){
+  void setCompetitions(List<Competition> competitions){
     mCompetitions = competitions;
     notifyDataSetChanged();
   }
@@ -48,11 +49,13 @@ public class CompetitionAdapter extends RecyclerView.Adapter<CompetitionAdapter.
   }
 
   class CompetitionViewHolder extends RecyclerView.ViewHolder {
-    private final TextView wordItemView;
+    private final TextView nameTv;
+    private final ImageView emblemIv;
 
     private CompetitionViewHolder(View itemView) {
       super(itemView);
-      wordItemView = itemView.findViewById(R.id.textView);
+      nameTv = itemView.findViewById(R.id.competitionNameTv);
+      emblemIv = itemView.findViewById(R.id.competitionEmblemIv);
     }
   }
 }
