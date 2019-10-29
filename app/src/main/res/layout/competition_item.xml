@@ -18,9 +18,11 @@
     <ImageView
         android:id="@+id/competitionEmblemIv"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="200dp"
         android:layout_margin="8dp"
         android:background="#85FFFFFF"
+        android:scaleType="centerCrop"
+        android:src="@drawable/soccer_default"
         />
 
     <TextView
