@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android=
-    "http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="wrap_content">
+    android:id="@+id/contact_block_cv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardBackgroundColor="#E6F0FF">
 
-  <TextView
-      android:id="@+id/competitionNameTv"
+  <LinearLayout
+      android:orientation="vertical"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      style="@style/text_view_style"
-      tools:text="Competition name" />
+      android:layout_height="match_parent">
 
-  <ImageView
-      android:id="@+id/competitionEmblemIv"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      />
-</LinearLayout>
+    <ImageView
+        android:id="@+id/competitionEmblemIv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:background="#85FFFFFF"
+        />
+
+    <TextView
+        android:id="@+id/competitionNameTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/text_view_style"
+        tools:text="Competition name" />
+
+
+  </LinearLayout>
+
+</androidx.cardview.widget.CardView>
