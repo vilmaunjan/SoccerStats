@@ -23,4 +23,9 @@ public interface GetDataService {
   @GET("/v2/competitions/{competitionId}/matches")
   Call<RequestObject> getMatches(@Path("competitionId") String competitionId);
 
+  //Sports API
+  @Headers("X-Auth-Token:"+ Constants.API_KEY)
+  @GET("/v2/competitions")
+  Call<RequestObject> getSportRequestObject();
+
 }
